@@ -1,0 +1,24 @@
+name: macOS SDK verification
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  verify:
+    strategy:
+      fail-fast: false
+      matrix:
+        runner: [macos-15-intel]
+    runs-on: ${{ matrix.runner }}
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+      - name: Display build environment
+        run: |
+          uname -m
+          sw_vers
+          swift --version
+      - name: Verify native build, SDK API tests, baseline and privacy
+        run: bash Verification/check_release.sh

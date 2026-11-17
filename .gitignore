@@ -1,0 +1,25 @@
+# SwiftPM / Xcode
+.build/
+.swiftpm/xcode/package.xcworkspace/xcuserdata/
+.swiftpm/configuration/registries.json
+DerivedData/
+*.xcuserstate
+*.xccheckout
+*.xcscmblueprint
+*.ipa
+*.app
+*.dSYM/
+
+# macOS / editors
+.DS_Store
+.AppleDouble
+._*
+*.swp
+.vscode/
+.idea/
+
+# Logs & local results
+*.log
+Verification/local-*.txt
+Verification/local-*.csv
+Screenshots/private/
